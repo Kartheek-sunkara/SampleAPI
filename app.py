@@ -23,9 +23,6 @@ from sklearn.model_selection import train_test_split
 
 app = Flask(__name__)
 
-@app.route('/app2')
-def startApp():
-    return "i am from example flask"
 
 @app.route('/classification',methods = ['POST', 'GET'])
 def classification():  
@@ -35,4 +32,4 @@ def classification():
     
 if __name__ == "__main__":
      app.debug = True
-     app.run(port=5000)
+     app.run()
