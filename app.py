@@ -24,7 +24,7 @@ from sklearn.model_selection import train_test_split
 app = Flask(__name__)
 
 
-@app.route('/classification',methods = ['POST', 'GET'])
+@app.route('/',methods = ['POST', 'GET'])
 def classification():  
     #result=request.args.get('pdf_path')
     return "Done"
