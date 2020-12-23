@@ -129,9 +129,9 @@ def classification():
     df_prediction=pd.DataFrame(columns=['actual', 'pred'])
     df_prediction['actual']=labelsTest1
     df_prediction['pred']= preds
-    print(df_prediction)
-    
-    return "JSONP_data"
+    #print(df_prediction)
+    result=df_prediction.to_json(orient="records")
+    return result
     
     
 if __name__ == "__main__":
