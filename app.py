@@ -41,7 +41,6 @@ app = Flask(__name__)
 @app.route('/',methods = ['POST', 'GET'])
 def classification():  
     result=request.args['name']
-    # df=pd.read_excel("D:\Pubmed-Share\AutoTaskAllocation\MetaData\mechanismDatasetNew.xlsx")
     df=pd.read_excel(result)
     train, test = train_test_split(df, test_size=0.33, random_state=42)
     punctuations = string.punctuation
@@ -102,10 +101,10 @@ def classification():
     
     # data
     train1 = train['articleText'].tolist()
-    labelsTrain1 = train['Mechanism'].tolist()
+    labelsTrain1 = train['DocType'].tolist()
     
     test1 = test['articleText'].tolist()
-    labelsTest1 = test['Mechanism'].tolist()
+    labelsTest1 = test['DocType'].tolist()
     # train
     pipe.fit(train1, labelsTrain1)
     
